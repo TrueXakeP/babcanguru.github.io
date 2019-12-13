@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0594)https://www.mymobileapp.online/WixWorker?cacheKiller=1575878892080&compId=tpaWorker_6&currency=BRL&deviceType=desktop&endpointType=worker&instance=BfCCye5UR3ABe2LkV13lioAQbe3pvYbs6F-QS_3mAXQ.eyJpbnN0YW5jZUlkIjoiMTRiMTUxYzgtNGJhMS00NGQ2LWI5MWMtNDg1MTM3MmI1MjkxIiwiYXBwRGVmSWQiOiIxNDE3ZmQyNy0zN2ZhLTc5NzItNmRhMy05ZmYxNWY0NzM0MGEiLCJzaWduRGF0ZSI6IjIwMTktMTItMTNUMjM6MzA6NTguNDYwWiIsImRlbW9Nb2RlIjp0cnVlLCJhaWQiOiIwYTUxNjgwNi1iMDNiLTQwMmYtOWY5YS1iZmY0ZDg2ZWFlYjgiLCJzaXRlT3duZXJJZCI6IjRiOTliZmMzLWI0MTUtNGU3OS05MmU0LWQ5YTIwNWQ4OTQ5MSJ9&locale=pt&siteRevision=47&tz=America%2FSao_Paulo&viewMode=site -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <script src="./jquery-3.3.1.min.js.download" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (typeof Wix != 'undefined') {
+                setPublishedListener();
+            } else {
+                $.ajax({
+                    type: 'GET', url: 'https://static.parastorage.com/services/js-sdk/1.109.0/js/wix.min.js',
+                    dataType: 'script',
+                    async: true,
+                    complete: function (jqXHR, textStatus) {
+                        setPublishedListener();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        window.gotMenuForMma = false;
+                    }
+                });
+            }
+        });
+
+        function setPublishedListener() {
+            Wix.Worker.addEventListener(Wix.Events.SITE_PUBLISHED, function (page) {
+                saveMenu();
+            });
+        }
+
+        function saveMenu() {
+            var url = 'https://www.mymobileapp.online/WixWorker/SaveMenu' + window.location.search;
+            
+            Wix.Worker.getSiteMap(function (sitePages) {
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: JSON.stringify(sitePages),
+                    accept: "application/json",
+                    async: true,
+                    complete: function (jqXHR, textStatus) {
+                        window.gotMenuForMma = true;
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                       window.gotMenuForMma = false;
+                       console('Could not publish menu to My Mobile App');
+                    }
+                });
+            });
+
+        }
+      
+    </script>
+
+
+</body></html>
