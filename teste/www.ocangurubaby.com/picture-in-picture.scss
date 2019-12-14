@@ -1,0 +1,61 @@
+.controlButton {
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: .2s;
+  transition-property: opacity;
+  opacity: 1;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center; }
+  .controlButton:hover {
+    opacity: .7; }
+
+.hidden {
+  visibility: hidden !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important; }
+
+.pictureInPictureControl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.pictureInPictureToggle {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  min-height: 26px;
+  transition: transform .2s; }
+  div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .pictureInPictureToggle {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    min-height: 21px; }
+    div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .pictureInPictureToggle .icon {
+      width: 24px;
+      height: 21px; }
+    div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .pictureInPictureToggle .icon_small {
+      display: none; }
+    div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .pictureInPictureToggle .icon_big {
+      display: block; }
+  .pictureInPictureToggle .icon {
+    width: 17px;
+    height: 15px; }
+  .pictureInPictureToggle .icon_small {
+    display: block; }
+  .pictureInPictureToggle .icon_big {
+    display: none; }
+  .pictureInPictureToggle:hover {
+    transform: scale(1.18); }
+  .pictureInPictureToggle.inPictureInPicture:hover {
+    transform: scale(0.8); }

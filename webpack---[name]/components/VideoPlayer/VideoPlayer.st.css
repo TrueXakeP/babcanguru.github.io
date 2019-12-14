@@ -1,0 +1,12 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+}
+
+) exports.default=__webpack_require__.stylable.create( "root", "VideoPlayer4111471387", {
+    "root": "VideoPlayer4111471387--root", "playButton":"VideoPlayer4111471387--playButton", "skins":"'wixui.skins.VideoPlayer'", "backgroundColor":"color_10", "font":"font_8", "fontColor":"color_2", "borderColor":"color_2", "borderSize":"0", "boxShadow":"none", "textSizeScale":"1px", "playButtonSize":"50px", "playButtonMobileSize":"30px"
+}
+
+, "", 7,
+/*! ./components/VideoPlayer/VideoPlayer.st.css */
+
+381);

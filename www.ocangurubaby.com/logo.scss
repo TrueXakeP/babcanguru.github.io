@@ -1,0 +1,73 @@
+.controlButton {
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: .2s;
+  transition-property: opacity;
+  opacity: 1;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center; }
+  .controlButton:hover {
+    opacity: .7; }
+
+.hidden {
+  visibility: hidden !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important; }
+
+.logoWrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  transition: opacity .2s;
+  transition-duration: .2s;
+  opacity: 1;
+  justify-content: center;
+  align-items: center; }
+  .logoWrapper:hover .logoPlaceholder {
+    opacity: .7; }
+
+.logoImage {
+  max-width: 125px;
+  max-height: 26px;
+  transition: opacity .2s; }
+  div[data-playable-hook='player-container'][data-playable-max-width~="550px"] .logoImage {
+    max-width: 90px;
+    max-height: 20px; }
+  div[data-playable-hook='player-container'][data-playable-max-width~="350px"] .logoImage {
+    max-width: 70px;
+    max-height: 18px; }
+  div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .logoImage {
+    max-width: 450px;
+    max-height: 36px; }
+  .logoImage.hidden {
+    display: none; }
+
+.logoButton {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  min-height: 26px;
+  transition: transform .2s; }
+  div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .logoButton {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    min-height: 35px; }
+    div[data-playable-hook='player-container'][data-playable-in-full-screen='true'] .logoButton .icon {
+      width: 24px;
+      height: 21px; }
+  .logoButton .icon {
+    width: 17px;
+    height: 15px; }
+  .logoButton:hover {
+    transform: scale(1.2); }
